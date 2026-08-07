@@ -7,7 +7,7 @@ const geist = Geist({
   subsets: ["latin"],
 });
 
-const siteUrl = "https://portfolio-green-beta-15.vercel.app";
+const siteUrl = "https://matias-echegaray-dev.vercel.app";
 const title = "Matías Echegaray — Desarrollador Full Stack";
 const description =
   "Desarrollador Full Stack especializado en C# (.NET), React y Next.js, con experiencia en Aseguramiento de Calidad (QA). Construyo aplicaciones web robustas de punta a punta.";
