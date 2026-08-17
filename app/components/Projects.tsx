@@ -14,6 +14,14 @@ const projects: {
     demoLink: "https://task-manager-huuy.vercel.app",
     repoLink: "https://github.com/matiasechega-sys/task-manager",
   },
+  {
+    name: "Buscador de Películas",
+    description:
+      "Buscador de películas full stack con autenticación de usuarios y favoritos personalizados. Consume la API de TMDB, con login seguro (contraseñas hasheadas) y favoritos guardados por usuario.",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "PostgreSQL", "TMDB API"],
+    demoLink: "https://buscador-peliculas-one-tan.vercel.app",
+    repoLink: "https://github.com/matiasechega-sys/buscador-peliculas",
+  },
 ];
 
 import Reveal from "./Reveal";
