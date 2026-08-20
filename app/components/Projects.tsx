@@ -4,15 +4,17 @@ const projects: {
   description: string;
   tech: string[];
   demoLink: string | null;
-  repoLink: string | null;
+  repoLinks: { label: string; href: string }[];
 }[] = [
   {
     name: "Task Manager",
     description:
       "Gestor de tareas full stack con CRUD completo, filtros y modo oscuro. Frontend y backend en Next.js, con base de datos PostgreSQL en la nube.",
-    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "PostgreSQL (Neon)"],
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "PostgreSQL"],
     demoLink: "https://task-manager-huuy.vercel.app",
-    repoLink: "https://github.com/matiasechega-sys/task-manager",
+    repoLinks: [
+      { label: "Código", href: "https://github.com/matiasechega-sys/task-manager" },
+    ],
   },
   {
     name: "Buscador de Películas",
@@ -20,7 +22,20 @@ const projects: {
       "Buscador de películas full stack con autenticación de usuarios y favoritos personalizados. Consume la API de TMDB, con login seguro (contraseñas hasheadas) y favoritos guardados por usuario.",
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "PostgreSQL", "TMDB API"],
     demoLink: "https://buscador-peliculas-one-tan.vercel.app",
-    repoLink: "https://github.com/matiasechega-sys/buscador-peliculas",
+    repoLinks: [
+      { label: "Código", href: "https://github.com/matiasechega-sys/buscador-peliculas" },
+    ],
+  },
+  {
+    name: "Sistema de Gestión Comercial",
+    description:
+      "Sistema full stack para gestionar productos, clientes y pedidos, con control de stock, transacciones y arquitectura en capas. API REST en Java/Spring Boot y frontend en React.",
+    tech: ["Java", "Spring Boot", "JPA/Hibernate", "PostgreSQL", "React", "TypeScript", "Vite"],
+    demoLink: null,
+    repoLinks: [
+      { label: "Código (Backend)", href: "https://github.com/matiasechega-sys/productos-api" },
+      { label: "Código (Frontend)", href: "https://github.com/matiasechega-sys/productos-frontend" },
+    ],
   },
 ];
 
@@ -77,17 +92,18 @@ export default function Projects() {
                       Ver demo
                     </a>
                   ) : null}
-                  {p.repoLink ? (
+                  {p.repoLinks.map((repo) => (
                     <a
-                      href={p.repoLink}
+                      key={repo.href}
+                      href={repo.href}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 rounded-lg border border-zinc-700 px-4 py-2 text-sm font-medium text-zinc-300 transition-colors hover:border-zinc-500 hover:text-zinc-50"
                     >
                       <GithubIcon />
-                      Código
+                      {repo.label}
                     </a>
-                  ) : null}
+                  ))}
                 </div>
               </div>
             ))}
